@@ -84,74 +84,104 @@ const Edituser = () => {
         setLastModifiedBy('');
     };
 
+
     return (
         <>
             <h1>CEL User Management</h1>
             <form onSubmit={handleSubmit}>
-                <div style={{ display: 'flex', flexDirection: 'row' }}>
-                    <div className="form-group">
-                        <label htmlFor="loginId">Login ID:</label>
-                        <input type="text" name="loginId" id="loginId" value={loginId} onChange={handleChange} />
+                <div className="row">
+                    <div className="col-md-3">
+                        <div className="form-group">
+                            <label htmlFor="loginId">Login ID:</label>
+                            <input type="text" class="App-input" name="loginId" id="loginId" value={loginId} onChange={handleChange} />
+                        </div>
                     </div>
-                    <div className="form-group" >
-                        <label htmlFor="entityType">Entity Type:</label>
-                        {/* <input type="text" name="entityType" id="entityType" value={entityType} onChange={handleChange} /> */}
+                    <div className="col-md-3">
+                        <div className="form-group" >
+                            <label htmlFor="entityType">Entity Type:</label>
+                            {/* <input type="text" name="entityType" id="entityType" value={entityType} onChange={handleChange} /> */}
+                        </div>
                     </div>
-                    <div className="form-group" >
-                        <label htmlFor="entityCode">Entity Code:</label>
-                        {/* <input type="text" name="entityCode" id="entityCode" value={entityCode} onChange={handleChange} /> */}
+                    <div className="col-md-3">
+                        <div className="form-group" >
+                            <label htmlFor="entityCode">Entity Code:</label>
+                            {/* <input type="text" name="entityCode" id="entityCode" value={entityCode} onChange={handleChange} /> */}
+                        </div>
                     </div>
-                    <div className="form-group" >
-                        <label htmlFor="userName">User Name:</label>
-                        <input type="text" name="userName" id="userName" value={userName} onChange={handleChange} />
-                    </div>
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'row' }}>
-                    <div className="form-group" >
-                        <label htmlFor="emailID">Email ID: <a style={{paddingLeft:"100px"}} href="">send Verification link</a></label>
-                        
-                        <input type="email" name="emailID" id="emailID" value={emailID} onChange={handleChange} />
-                    </div>
-                    <div className="form-group" >
-                        <label htmlFor="mobileNumber">Mobile Number:</label>
-                        <input type="number" name="mobileNumber" id="mobileNumber" value={mobileNumber} onChange={handleChange} />
-                    </div>
-                    <div className="form-group" >
-                        <label htmlFor="celUserType">CEL User Type:</label>
-                        <select name="celUserType" id="celUserType" value={celUserType} onChange={handleChange}>
-                            <option value="Admin">Admin</option>
-                            <option value="superAdmin">SuperAdmin</option>
-                            <option value="User">User</option>
-                        </select>
-                    </div>
-                    <div className="form-group" >
-                        <label htmlFor="status">Status</label>
-                        <select name="status" id="status" value={status} onChange={handleChange}>
-                            <option value="Active">Active</option>
-                            <option value="Inactive">Inactive</option>
-                        </select>
+                    <div className="col-md-3">
+                        <div className="form-group" >
+                            <label htmlFor="userName">User Name:</label>
+                            <input type="text" name="userName" id="userName" value={userName} onChange={handleChange} />
+                        </div>
                     </div>
                 </div>
-                <div style={{ display: 'flex', flexDirection: 'row' }}>
+                <div className="row">
+                    <div className="col-md-3">
+                        <div className="form-group" >
+                            <label htmlFor="emailID">EmailID: <a style={{ display: "inline", alignItems: "start", paddingLeft: "80px", whiteSpace: "nowrap" }} href="">send verification link</a></label>
 
-                <div style={{width:"340px"}} className="form-group" >
-                    <label htmlFor="isDeleted">Is Deleted:</label>
-                    <select name="isDeleted" id="isDeleted" value={isDeleted} onChange={handleChange}>
-                        <option value="No">No</option>
-                        <option value="Yes">Yes</option>
-                    </select>
+                            <input type="email" name="emailID" id="emailID" value={emailID} onChange={handleChange} />
+                        </div>
+                    </div>
+                    <div className="col-md-3">
+                        <div className="form-group" >
+                            <label htmlFor="mobileNumber">Mobile Number:</label>
+                            <input type="number" name="mobileNumber" id="mobileNumber" value={mobileNumber} onChange={handleChange} />
+                        </div>
+                    </div>
+                    <div className="col-md-3">
+                        <div className="form-group" >
+                            <label htmlFor="celUserType">CEL User Type:</label>
+                            <select name="celUserType" id="celUserType" value={celUserType} onChange={handleChange}>
+                                <option value="Admin">Admin</option>
+                                <option value="superAdmin">SuperAdmin</option>
+                                <option value="User">User</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div className="col-md-3">
+                        <div className="form-group" >
+                            <label htmlFor="status">Status</label>
+                            <select name="status" id="status" value={status} onChange={handleChange}>
+                                <option value="Active">Active</option>
+                                <option value="Inactive">Inactive</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
-                <div className="form-group" >
-                    <label htmlFor="createdBy">Created By:</label>
-                    {/* <input type="text" name="createdBy" id="createdBy" value={createdBy} onChange={handleChange} /> */}
+
+
+                <div className="row">
+                    <div className="col-md-3">
+                        <div  className="form-group" >
+                            <label htmlFor="isDeleted">Is Deleted:</label>
+                            <select name="isDeleted" id="isDeleted" value={isDeleted} onChange={handleChange}>
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div className="col-md-3">
+                        <div className="form-group" >
+                            <label htmlFor="createdBy">Created By:</label>
+                            {/* <input type="text" name="createdBy" id="createdBy" value={createdBy} onChange={handleChange} /> */}
+                        </div>
+                    </div>
+                    <div className="col-md-3">
+                        <div className="form-group" >
+                            <label htmlFor="LastModifiedBy">Last Modified By:</label>
+                            {/* <input type="text" name="createdBy" id="createdBy" value={createdBy} onChange={handleChange} /> */}
+                        </div>
+                    </div>
                 </div>
-                
-                </div>
+
+
+
                 <div className="button-container">
                     <button type="submit">Submit</button>
                     <button type="button">Cancel</button>
                 </div>
-            </form>
+            </form >
         </>
     );
 };
